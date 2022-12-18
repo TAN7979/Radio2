@@ -2,45 +2,44 @@ package ru.netology;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-public class RadioTest {
-
+public class SecondRadioTest {
     @Test
-    public void checkingTheCurrentStation(){
-        Radio radio = new Radio();
+    public void checkingTheCurrentSecondStation() {
+        Radio radio = new Radio(30);
 
-        radio.setCurrentStation(5);
-        int expected = 5;
+        radio.setCurrentStation(20);
+        int expected = 20;
         int actual = radio.getCurrentStation();
         Assertions.assertEquals(expected, actual);
     }
 
     @Test
-    public void switchingCheckCurrentStationUp(){
-        Radio radio = new Radio();
-        radio.setCurrentStation(8);
+    public void checkSwitchingCurrentSecondStationUp() {
+        Radio radio = new Radio(30);
+        radio.setCurrentStation(28);
         radio.next();
 
-        int expected = 9;
+        int expected = 29;
         int actual = radio.getCurrentStation();
-        Assertions.assertEquals(expected,actual );
+        Assertions.assertEquals(expected, actual);
 
     }
 
     @Test
-    public void switchingCheckMaxStation(){
-        Radio radio = new Radio();
-        radio.setCurrentStation(9);
+    public void switchingCheckMaxSecondStation() {
+        Radio radio = new Radio(30);
+        radio.setCurrentStation(29);
 
         radio.next();
 
         int expected = 0;
         int actual = radio.getCurrentStation();
-        Assertions.assertEquals(expected,actual );
-
+        Assertions.assertEquals(expected, actual);
     }
+
     @Test
-    public void switchingCheckCurrentStationBottom() {
-        Radio radio = new Radio();
+    public void switchingCheckCurrentSecondStationBottom() {
+        Radio radio = new Radio(30);
         radio.setCurrentStation(1);
 
         radio.prev();
@@ -50,54 +49,55 @@ public class RadioTest {
         Assertions.assertEquals(expected, actual);
 
     }
+
     @Test
-    public void switchingCheckMinStation() {
-        Radio radio = new Radio();
+    public void switchingCheckMinSecondStation() {
+        Radio radio = new Radio(30);
         radio.setCurrentStation(0);
 
         radio.prev();
 
-        int expected = 9;
+        int expected = 29;
         int actual = radio.getCurrentStation();
         Assertions.assertEquals(expected, actual);
     }
+
     @Test
-    public void checkingTheCurrentVolume(){
-        Radio radio = new Radio();
-        radio.setCurrentVolume(5);
+    public void checkingTheCurrentSecondVolume() {
+        Radio radio = new Radio(30);
+        radio.setCurrentVolume(50);
 
-        int expected = 5;
+        int expected = 50;
         int actual = radio.getCurrentVolume();
-        Assertions.assertEquals(expected,actual);
-
+        Assertions.assertEquals(expected, actual);
     }
     @Test
     public void switchingCheckCurrentVolumeUp(){
-        Radio radio = new Radio();
-        radio.setCurrentVolume(8);
+        Radio radio = new Radio(30);
+        radio.setCurrentVolume(99);
         radio.increaseVolume();
 
 
-        int expected = 9;
+        int expected = 100;
         int actual = radio.getCurrentVolume();
-        Assertions.assertEquals(expected,actual );
+        Assertions.assertEquals(expected, actual);
 
     }
     @Test
-    public void switchingCheckMaxVolume(){
-        Radio radio = new Radio();
-        radio.setCurrentVolume(10);
+    public void switchingCheckMaxCurrentVolume(){
+        Radio radio = new Radio(30);
+        radio.setCurrentVolume(100);
 
         radio.increaseVolume();
 
-        int expected = 10;
+        int expected = 100;
         int actual = radio.getCurrentVolume();
-        Assertions.assertEquals(expected,actual );
+        Assertions.assertEquals(expected, actual);
 
     }
     @Test
     public void switchingCheckCurrentVolumeBottom(){
-        Radio radio = new Radio();
+        Radio radio = new Radio(30);
         radio.setCurrentVolume(1);
 
         radio.decreaseVolume();
@@ -108,8 +108,8 @@ public class RadioTest {
 
     }
     @Test
-    public void switchingCheckMinVolume(){
-        Radio radio = new Radio();
+    public void switchingCheckMinCurrentVolume(){
+        Radio radio = new Radio(30);
         radio.setCurrentVolume(0);
 
         radio.decreaseVolume();
@@ -120,3 +120,4 @@ public class RadioTest {
 
     }
 }
+
